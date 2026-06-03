@@ -1,0 +1,39 @@
+# SkyFinder DIR experiment config
+# All paths relative to skyfinder-dir/
+
+data_dir: data/
+store_root: results/checkpoints
+
+# Model / training
+img_size: 224
+batch_size: 64
+epoch: 30
+lr: 0.001
+optimizer: adam
+weight_decay: 0.0001
+schedule: [20, 25]
+loss: l1
+workers: 4
+seed: 42
+
+# LDS defaults (override per experiment)
+lds: false
+lds_kernel: gaussian
+lds_ks: 5
+lds_sigma: 2
+
+# FDS defaults
+fds: false
+fds_kernel: gaussian
+fds_ks: 5
+fds_sigma: 2
+start_update: 0
+start_smooth: 1
+fds_mmt: 0.9
+
+# Reweighting
+reweight: none
+
+# Temperature binning (SKYFINDER-specific)
+# bucket_num = MAX_TARGET = 86  (set in datasets.py)
+bucket_start: 0

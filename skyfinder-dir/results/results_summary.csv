@@ -1,0 +1,4 @@
+experiment,reweight,lds,fds,test_mae,test_rmse,test_gmean,many_mae,median_mae,few_mae
+Baseline,none,False,False,7.668,9.589,5.053,7.132,16.403,23.531
+LDS,sqrt_inv,True,False,7.33,9.048,4.91,6.746,16.983,23.942
+LDS + FDS,sqrt_inv,True,True,6.93,9.156,4.46,6.233,18.369,27.035

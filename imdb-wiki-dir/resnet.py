@@ -141,7 +141,8 @@ class ResNet(nn.Module):
 
         if self.training and self.fds:
             if epoch >= self.start_smooth:
-                encoding_s = self.FDS.smooth(encoding_s, targets, epoch)
+                # SKYFINDER: FDS buffers are float32; cast around smooth() for AMP compat
+                encoding_s = self.FDS.smooth(encoding_s.float(), targets, epoch).to(encoding.dtype)
 
         if self.use_dropout:
             encoding_s = self.dropout(encoding_s)

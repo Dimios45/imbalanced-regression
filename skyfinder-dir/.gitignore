@@ -1,0 +1,18 @@
+# Large data files
+data/images/
+data/complete_table_with_mcr.csv
+
+# Model checkpoints (large binaries)
+results/checkpoints/
+
+# W&B local run dirs
+wandb/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pth.tar
+*.pth
+
+# Logs (keep training.log but not tensorboard)
+runs/
